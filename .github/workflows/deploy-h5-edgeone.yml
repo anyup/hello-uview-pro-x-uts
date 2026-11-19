@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       uvpx_ref:
-        description: 'uview-pro-x 组件库的分支或标签（默认 master）'
+        description: 'uview-pro-x-uts 组件库的分支或标签（默认 master）'
         required: false
         default: master
 
@@ -33,28 +33,28 @@ jobs:
 
       # 1) 拉取组件库：本仓库只有宿主工程与示例页，ux-* 组件源码在私有库 anyup/uview-pro-x-uts。
       #    私有库按“纯库仓库”组织（根目录即组件库包：package.json + components/ + index.uts…），
-      #    因此可直接检出到 uni_modules/uview-pro-x（仓库名带 -uts，但目录名必须是 uview-pro-x，
-      #    否则 easycom 与示例页导入路径 @/uni_modules/uview-pro-x 全部失效），无需二次搬运子目录。
+      #    因此可直接检出到 uni_modules/uview-pro-x-uts（目录名须与仓库名一致，宿主工程 easycom
+      #    与示例页导入路径均为 @/uni_modules/uview-pro-x-uts），无需二次搬运子目录。
       #    跨仓库访问私有库不能用本仓库的 GITHUB_TOKEN（令牌只对当前仓库有效），
       #    需 secrets.UVIEW_PRO_X_TOKEN（对 anyup/uview-pro-x-uts 有 Contents 读权限）。
-      - name: Checkout uview-pro-x library
+      - name: Checkout uview-pro-x-uts library
         uses: actions/checkout@v4
         with:
           repository: anyup/uview-pro-x-uts
           ref: ${{ github.event.inputs.uvpx_ref || 'master' }}
           token: ${{ secrets.UVIEW_PRO_X_TOKEN }}
-          path: uni_modules/uview-pro-x
+          path: uni_modules/uview-pro-x-uts
           # 不在检出目录里留下凭据（无后续 git 操作，避免 Token 残留）
           persist-credentials: false
 
       # 2) 剥掉组件库仓库自带的脚手架（.git/.github 等），只留组件库包本体，避免污染编译与 H5 产物
       - name: Strip library scaffolding
         run: |
-          rm -rf uni_modules/uview-pro-x/.git uni_modules/uview-pro-x/.github uni_modules/uview-pro-x/.agents \
-                 uni_modules/uview-pro-x/scripts uni_modules/uview-pro-x/unpackage uni_modules/uview-pro-x/node_modules
+          rm -rf uni_modules/uview-pro-x-uts/.git uni_modules/uview-pro-x-uts/.github uni_modules/uview-pro-x-uts/.agents \
+                 uni_modules/uview-pro-x-uts/scripts uni_modules/uview-pro-x-uts/unpackage uni_modules/uview-pro-x-uts/node_modules
           # 防御验证：组件库必需文件缺失则显式失败
-          test -f uni_modules/uview-pro-x/package.json
-          test -f uni_modules/uview-pro-x/index.uts
+          test -f uni_modules/uview-pro-x-uts/package.json
+          test -f uni_modules/uview-pro-x-uts/index.uts
 
       # 3) 缓存 HBuilderX 原始包（tar.gz，稳定不变对象）。不缓存解压目录——避免 cli open/publish 写入运行态
       #    导致缓存文件变动、Post 阶段上传失败。命中则跳过重新下载 1.7GB。
