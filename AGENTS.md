@@ -1,13 +1,13 @@
 # uView-Pro-x（演示工程 + 组件库维护）
 
-> uView Pro 组件库的 uni-app x 版本（Vue3 + UTS 强类型）**演示工程**：本仓库只承载示例页与宿主工程，组件库源码在私有仓库，编译时装配进来。支持 App（Android/iOS/鸿蒙）、H5、微信小程序三端。
+> uView Pro 组件库的 uni-app x 版本（Vue3 + UTS 强类型）**演示工程**：本仓库只承载示例页与宿主工程，组件库源码在私有仓库，编译时装配进来。支持 App（Android/iOS/鸿蒙）、H5、微信与支付宝小程序六大平台。
 > 组件用 `ux-` 前缀；组件专属类名用 `useBEM` BEM（`ux-` 前缀），全局工具类（`u-line-1`、`u-iconfont` 等）保留 `u-` 前缀。
 
 ## 双仓库结构
 
 | 仓库 | 可见性 | 内容 | 本地位置 |
 |------|--------|------|----------|
-| `anyup/hello-uview-pro-x` | 公开 | 本仓库：示例页（`pages/`）、demo 容器组件（`components/`）、`pages.json` / `manifest.json` / `App.uvue` 等宿主工程 | 仓库根 |
+| `anyup/hello-uview-pro-x-uts` | 公开 | 本仓库：示例页（`pages/`）、demo 容器组件（`components/`）、`pages.json` / `manifest.json` / `App.uvue` 等宿主工程 | 仓库根 |
 | `anyup/uview-pro-x` | 私有 | 组件库源码：`package.json` + `components/ux-*` + `libs/` + `locale/` + `types/` + `static/` + `theme.scss`/`index.scss`/`index.uts` | `uni_modules/uview-pro-x/` |
 
 - **`uni_modules/uview-pro-x/` 是一个独立的 git 仓库**（私有库的工作副本），不被本仓库跟踪：改组件库源码后要**在私有库提交推送**，别 `git add` 到本仓库。
@@ -84,7 +84,7 @@
 | `npm run release:undo` | 撤销未推送的本地发布：删除两仓标签并把发布提交退回暂存区（不回退文件内容） |
 | `npm run changelog*` | 单独生成日志（`current` / `last` / `all`，带或不带 emoji）；`changelog:release` 写根 `CHANGELOG.md`、`changelog:lib` 写组件库、`changelog:docs` 写文档库，三者同源 |
 
-- 版本号写入本仓库 `package.json`，并同步组件库 `uni_modules/uview-pro-x/package.json` 与文档库 `uview-pro-x-doc/package.json`；**三份日志同源、内容一致**：均由 `组件库最近标签..HEAD` + `主仓库最近标签..HEAD` 合并生成（`changelog:release` / `changelog:lib` / `changelog:docs`）；三份日志的新版本标题统一为 `## x.y.z（YYYY-MM-DD）`（中文全角括号包裹日期），文档库 1.0.5 及以前的历史版本保留原格式、不回填；生成的日志条目**不带提交 hash**。
+- 版本号写入本仓库 `package.json`，并同步组件库 `uni_modules/uview-pro-x/package.json` 与文档库 `uview-pro-x-uts-doc/package.json`；**三份日志同源、内容一致**：均由 `组件库最近标签..HEAD` + `主仓库最近标签..HEAD` 合并生成（`changelog:release` / `changelog:lib` / `changelog:docs`）；三份日志的新版本标题统一为 `## x.y.z（YYYY-MM-DD）`（中文全角括号包裹日期），文档库 1.0.5 及以前的历史版本保留原格式、不回填；生成的日志条目**不带提交 hash**。
 - 文档库只同步版本号与 `docs/zh|en/components/changelog.md`（中英内容一致，英文不翻译），**不提交、不打标签**，`release:undo` 也不回退文档库改动。
 - 发布时组件库作为独立仓库**自动提交并打同名标签**（`--push` 时跟随主仓库推送，默认不推送）；组件库提交限定为 `package.json` + `changelog.md`，不带上组件库工作区其他改动。
 - 主仓库发布提交只包含 `package.json` 与 `CHANGELOG.md`，不会带上工作区其他改动（嵌套仓库、历史未提交改动均不进提交）。
