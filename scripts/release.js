@@ -13,14 +13,14 @@
  * 涉及文件:
  *   - package.json                          版本号（本仓库）
  *   - CHANGELOG.md                          更新日志（本仓库，随发布提交）
- *   - uni_modules/uview-pro-x/package.json  组件库版本号（独立仓库，随发布在同仓库提交并打同名标签）
- *   - uni_modules/uview-pro-x/changelog.md  组件库更新日志（同上）
- *   - uview-pro-x-doc/package.json          文档库版本号（只更新文件，不提交、不打标签）
- *   - uview-pro-x-doc/docs/zh|en/components/changelog.md  文档库更新日志（同上，中英内容一致，英文不翻译）
+ *   - uni_modules/uview-pro-x-uts/package.json  组件库版本号（独立仓库，随发布在同仓库提交并打同名标签）
+ *   - uni_modules/uview-pro-x-uts/changelog.md  组件库更新日志（同上）
+ *   - uview-pro-x-uts-doc/package.json          文档库版本号（只更新文件，不提交、不打标签）
+ *   - uview-pro-x-uts-doc/docs/zh|en/components/changelog.md  文档库更新日志（同上，中英内容一致，英文不翻译）
  *
- * 组件库（uni_modules/uview-pro-x）是嵌套的独立 git 仓库：发布时与主仓库一样
+ * 组件库（uni_modules/uview-pro-x-uts）是嵌套的独立 git 仓库：发布时与主仓库一样
  * 「提交 + 打 vX.Y.Z 标签」，默认不推送；传 --push 时两个仓库一起推送。
- * 文档库（uview-pro-x-doc）只同步版本号与更新日志，不提交、不打标签。
+ * 文档库（uview-pro-x-uts-doc）只同步版本号与更新日志，不提交、不打标签。
  *
  * 更新日志来源（主仓库 / 组件库 / 文档库统一）:
  *   组件库「最近标签..HEAD」+ 主仓库「最近标签..HEAD」合并后的提交
@@ -34,14 +34,14 @@ const fs = require('fs');
 const path = require('path');
 
 // 私有组件库（独立 git 仓库，不被本仓库跟踪）
-const LIB_DIR = path.join('uni_modules', 'uview-pro-x');
+const LIB_DIR = path.join('uni_modules', 'uview-pro-x-uts');
 const LIB_PACKAGE_PATH = path.join(LIB_DIR, 'package.json');
 const LIB_CHANGELOG_PATH = path.join(LIB_DIR, 'changelog.md');
 // 组件库中随发布提交的产物文件（在组件库仓库内单独提交）
 const LIB_RELEASE_FILES = [LIB_PACKAGE_PATH, LIB_CHANGELOG_PATH];
 // 文档库：只同步版本号与更新日志，不提交、不打标签
-const DOCS_PACKAGE_PATH = path.join('uview-pro-x-doc', 'package.json');
-const DOCS_CHANGELOG_PATH = path.join('uview-pro-x-doc', 'docs', 'zh', 'components', 'changelog.md');
+const DOCS_PACKAGE_PATH = path.join('uview-pro-x-uts-doc', 'package.json');
+const DOCS_CHANGELOG_PATH = path.join('uview-pro-x-uts-doc', 'docs', 'zh', 'components', 'changelog.md');
 // 发布提交仅包含的产物文件（不包含工作区其他改动与嵌套仓库）
 const RELEASE_FILES = ['package.json', 'CHANGELOG.md'];
 const COMMIT_PREFIX = 'chore(release): bump version to';
@@ -88,7 +88,7 @@ if (args[0] === 'push') {
         console.log(`✅ 版本 ${version} 推送成功！`);
         if (libRepoExists()) {
             console.log('');
-            console.log('📤 推送组件库（uni_modules/uview-pro-x）提交...');
+            console.log('📤 推送组件库（uni_modules/uview-pro-x-uts）提交...');
             try {
                 libGit('git push origin HEAD', { stdio: 'inherit' });
                 if (libHasTag(`v${version}`)) {
@@ -100,7 +100,7 @@ if (args[0] === 'push') {
                 console.log('✅ 组件库推送完成！');
             } catch (error) {
                 console.warn(`⚠️  组件库推送失败: ${error.message}`);
-                console.warn('💡 请在 uni_modules/uview-pro-x 目录内手动推送');
+                console.warn('💡 请在 uni_modules/uview-pro-x-uts 目录内手动推送');
             }
         }
         process.exit(0);
@@ -167,7 +167,7 @@ if (args[0] === 'undo') {
         let libUndone = false;
         if (libRepoExists()) {
             console.log('');
-            console.log('📦 撤销组件库（uni_modules/uview-pro-x）发布...');
+            console.log('📦 撤销组件库（uni_modules/uview-pro-x-uts）发布...');
             let libLastCommitMsg = '';
             try {
                 libLastCommitMsg = libGit('git log -1 --pretty=%B').trim();
@@ -199,13 +199,13 @@ if (args[0] === 'undo') {
             console.log('');
             console.log(
                 libUndone
-                    ? '   • 组件库（uni_modules/uview-pro-x）发布标签与提交已同步撤销，改动保留在暂存区'
-                    : '   • 组件库（uni_modules/uview-pro-x）未改动'
+                    ? '   • 组件库（uni_modules/uview-pro-x-uts）发布标签与提交已同步撤销，改动保留在暂存区'
+                    : '   • 组件库（uni_modules/uview-pro-x-uts）未改动'
             );
         }
         if (fs.existsSync(DOCS_PACKAGE_PATH)) {
             console.log('');
-            console.log('   • 文档库（uview-pro-x-doc）不参与提交与标签，版本号与日志改动保持不变');
+            console.log('   • 文档库（uview-pro-x-uts-doc）不参与提交与标签，版本号与日志改动保持不变');
         }
         console.log('');
         console.log('💡 如需重新发布，运行: npm run release:patch（或其他版本类型）');
@@ -396,7 +396,7 @@ function continueRelease() {
         execCommand(`git add ${filesToCommit.join(' ')}`);
         // 路径限定提交：只提交发布产物，不带上工作区其他已暂存改动
         execCommand(`git commit -m "${COMMIT_PREFIX} ${newVersion}" -m "- Update package.json version
-- Sync uview-pro-x module version
+- Sync uview-pro-x-uts module version
 - Generate changelog for ${newVersion}" -- ${filesToCommit.join(' ')}`);
 
         // 创建标签
@@ -406,7 +406,7 @@ function continueRelease() {
         // 组件库是嵌套的独立仓库：与主仓库一致，提交版本产物并打同名标签（默认不推送）
         if (libRepoExists()) {
             console.log('');
-            console.log('📦 提交组件库（uni_modules/uview-pro-x 独立仓库）...');
+            console.log('📦 提交组件库（uni_modules/uview-pro-x-uts 独立仓库）...');
             const libFiles = LIB_RELEASE_FILES.filter(file => fs.existsSync(file));
             if (libFiles.length === 0) {
                 console.log('ℹ️  组件库无版本产物文件，跳过提交');
@@ -449,7 +449,7 @@ function continueRelease() {
                     }
                 } catch (error) {
                     console.warn(`⚠️  组件库推送失败: ${error.message}`);
-                    console.warn('💡 请在 uni_modules/uview-pro-x 目录内手动推送');
+                    console.warn('💡 请在 uni_modules/uview-pro-x-uts 目录内手动推送');
                 }
             }
         }
@@ -459,12 +459,12 @@ function continueRelease() {
         if (libRepoExists()) {
             console.log('');
             console.log(
-                `📦 组件库（uni_modules/uview-pro-x）已提交并打标签 v${newVersion}${shouldPush ? '，已推送' : '（未推送）'}`
+                `📦 组件库（uni_modules/uview-pro-x-uts）已提交并打标签 v${newVersion}${shouldPush ? '，已推送' : '（未推送）'}`
             );
         }
         if (fs.existsSync(DOCS_PACKAGE_PATH)) {
             console.log('');
-            console.log(`📚 文档库（uview-pro-x-doc）版本与更新日志已同步为 ${newVersion}（未提交、未打标签）`);
+            console.log(`📚 文档库（uview-pro-x-uts-doc）版本与更新日志已同步为 ${newVersion}（未提交、未打标签）`);
         }
         if (!shouldPush) {
             console.log('💡 如需推送，运行: npm run release:push');

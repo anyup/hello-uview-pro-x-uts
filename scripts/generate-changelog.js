@@ -34,7 +34,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 提交链接指向的仓库（演示仓库）
-const REPO_URL = 'https://github.com/anyup/hello-uview-pro-x';
+const REPO_URL = 'https://github.com/anyup/hello-uview-pro-x-uts';
 
 // 解析命令行参数
 const args = process.argv.slice(2);
