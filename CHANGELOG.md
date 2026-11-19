@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.0（2026-11-19）
+
+### ✨ Features | 新功能
+
+- 新增 uview-pro-x 组件库基础结构与工具函数
+- **tag:** 新增 tag 标签自定义样式示例功能
+
+### 🐛 Bug Fixes | Bug 修复
+
+- **ux-tabs:** 修复 App 端横向滚动标签栏无法滚动的问题
+- **ux-picker:** 修复 picker 选择器主题适配问题，统一三端样式显示
+- **ux-select:** 修复 select 选择器指示器边框颜色不跟随应用主题的问题
+
 ## 1.0.31（2026-11-17）
 
 ### 🐛 Bug Fixes | Bug 修复
