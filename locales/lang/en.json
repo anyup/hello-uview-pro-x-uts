@@ -155,6 +155,7 @@
             "customTextText": "Custom text",
             "customBgText": "Custom background",
             "customBorderText": "Custom border",
+            "customStyleText": "Custom Style",
             "closeableTitle": "Closable (closeable)",
             "closeableDesc": "Set closeable to true; tapping the close button triggers the close event.",
             "closeableText": "Closable tag",

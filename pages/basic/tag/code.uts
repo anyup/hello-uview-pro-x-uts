@@ -108,6 +108,7 @@ const color = `
         <ux-tag text="自定义文字" color="#ff00ff" custom-class="tag-spacing"></ux-tag>
         <ux-tag text="自定义背景" bg-color="#2979ff" color="#ffffff" custom-class="tag-spacing"></ux-tag>
         <ux-tag text="自定义边框" mode="plain" color="#fa3534" border-color="#fa3534" custom-class="tag-spacing"></ux-tag>
+        <ux-tag text="自定义样式" color="#ffffff" :custom-style="{ backgroundColor: '#7c4dff' }" custom-class="tag-spacing"></ux-tag>
     </view>
 </template>
 
