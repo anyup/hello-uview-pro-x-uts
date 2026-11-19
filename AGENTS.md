@@ -10,7 +10,7 @@
 | `anyup/hello-uview-pro-x-uts` | 公开 | 本仓库：示例页（`pages/`）、demo 容器组件（`components/`）、`pages.json` / `manifest.json` / `App.uvue` 等宿主工程 | 仓库根 |
 | `anyup/uview-pro-x-uts` | 私有 | 组件库源码：`package.json` + `components/ux-*` + `libs/` + `locale/` + `types/` + `static/` + `theme.scss`/`index.scss`/`index.uts` | `uni_modules/uview-pro-x-uts/` |
 
-- **`uni_modules/uview-pro-x-uts/` 是一个独立的 git 仓库**（私有库的工作副本），不被本仓库跟踪：改组件库源码后要**在私有库提交推送**，别 `git add` 到本仓库。
+- **`uni_modules/uview-pro-x-uts/` 目前随本仓提交**（组件库源码在本仓跟踪范围内，改完跟本仓一起提交即可）。**后续计划拆成独立私有仓 `anyup/uview-pro-x-uts`**（与 TS 侧结构对齐）；拆分落地后本段改为「私有库工作副本、不进本仓提交」，并同步更新根 `AGENTS.md`。
 - **打包发布**：本仓库带一份 `.github/workflows/deploy-h5-edgeone.yml`，组件库源码就在 `uni_modules/uview-pro-x-uts/` 里，workflow **不需要拉取私有库**，直接编译本工程并发布到 EdgeOne Pages 项目 `h5-uviewpro-x-uts`（自定义域名 `h5-uts.uviewpro.cn`）。项目名勿写成带连字符的 `h5-uview-pro-x-uts`，也勿与 TS 版的 `h5-uviewpro-x`（`h5-x.uviewpro.cn`）混用，否则会新建多余项目。push 到 `master` 或手动触发均会发布。
   - 本仓库产物流程需要 secrets：`DCLOUD_USERNAME` / `DCLOUD_PASSWORD`、`EDGEONE_API_TOKEN`。
 - **无 `src/` 前缀**：源码路径直接是 `pages/...`、`uni_modules/...`，不要臆造 `src/` 前缀。
@@ -60,14 +60,14 @@
 | 改动范围 | 验证方式 |
 |---|---|
 | 简单修复（文案/样式/单点 bug） | 无需自动验证 |
-| 组件修复 / 发布 / 大改 / 跨层 | 复用常驻 H5 dev server（localhost:9000），浏览器打开示例页确认无报错 |
+| 组件修复 / 发布 / 大改 / 跨层 | 复用常驻 H5 dev server（localhost:9010），浏览器打开示例页确认无报错 |
 
-- **复用常驻 dev server**：默认 `http://localhost:9000/#/`，不自行起停；改代码后热更新生效直接浏览器确认。
-- **若 9000 未启动**（HBuilderX 未运行）：用 HBuilderX CLI 后台拉起，无需查找安装位置：
+- **复用常驻 dev server**：默认 `http://localhost:9010/#/`（本仓 demo 固定 9010、文档站 9110，与 TS 侧的 9000 / 9100 错开，两仓可同时运行）；不自行起停，改代码后热更新生效直接浏览器确认。
+- **若 9010 未启动**（HBuilderX 未运行）：用 HBuilderX CLI 后台拉起，无需查找安装位置：
   ```powershell
   & "D:\Program Files\HBuilderX\cli.exe" launch web --project "<本仓库绝对路径>"
   ```
-  约 5 秒编译完成（输出 `Local: http://localhost:9000/`）；本仓库无 package.json，不能用 `npm run dev`。
+  约 5 秒编译完成（输出 `Local: http://localhost:9010/`）；本仓库无 package.json，不能用 `npm run dev`。
 - **一键验证**：项目根执行 `node scripts/verify-h5.mjs <route> --timeout 120000 [--json]`（route 形如 `feedback/mask`，脚本自动补 `pages/` 与 `/index`；只收集 console/page 错误，不截图）。**勿写临时 playwright 脚本**。
 - **门禁脚本**：`scripts/verify-type-shims.mjs`（`types/global.uts` 纯类型 ↔ 同名 const 占位一一对应，加密版插件必需；对象型类型不许加占位）、`scripts/verify-script-order.mjs`（组件 script 编排）、`scripts/verify-demo-examples.mjs --demo <dir>`（示例页 index.uvue ↔ code.uts 一一对应、prop 完整性）、`scripts/verify-uvue-css.mjs`（uvue 样式的 App 端平台限制，如 `display` 仅 `flex`/`none`；识别 `#ifdef` / `#ifndef` 条件编译，只在 App 端会编译的分支上报错）。扫描范围含 `library` / `hooks` 子包；这两组无 `ux-*` 主体组件，自动跳过 prop 完整性一项，其余（段序 / custom-class / code 归档 / 详情）照常校验。
 - **验证职责划分**：AI 只验证 H5（复用常驻 dev server）；**App 端编译验证（UTS 语法最终校验）由用户在 HBuilderX 执行**，AI 不跑 App 构建。

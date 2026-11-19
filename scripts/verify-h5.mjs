@@ -5,13 +5,13 @@
 //   node scripts/verify-h5.mjs <route>         # route 如 feedback/mask（必填）
 //   node scripts/verify-h5.mjs <route> --timeout 8000
 //   node scripts/verify-h5.mjs <route> --json
-// 前置：常驻 dev server（localhost:9000）已启动；playwright 浏览器已安装。
+// 前置：常驻 dev server（localhost:9010）已启动；playwright 浏览器已安装。
 import { chromium } from 'playwright';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const BASE = process.env.H5_BASE_URL || 'http://localhost:9000';
+const BASE = process.env.H5_BASE_URL || 'http://localhost:9010';
 const args = process.argv.slice(2);
 const jsonOut = args.includes('--json');
 const timeoutArg = args.indexOf('--timeout');
