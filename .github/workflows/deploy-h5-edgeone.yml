@@ -17,11 +17,11 @@ jobs:
 
     env:
       # HBuilderX Linux 正式版（官方源）。升级 HBuilderX 时改这里。
-      HX_TARBALL_URL: https://download1.dcloud.net.cn/download/HBuilderX.5.24.2026081301.linux_x64.full.tar.gz
+      HX_TARBALL_URL: https://download1.dcloud.net.cn/download/HBuilderX.5.34.2026102909.linux_x64.full.tar.gz
       # EdgeOne Pages 产物目录（checkout 后仓库根即项目根，cli publish web 输出到 unpackage/dist/build/web）
       BUILD_DIR: unpackage/dist/build/web
       # EdgeOne Pages 项目名
-      EO_PROJECT: h5-uviewpro-x
+      EO_PROJECT: h5-uviewpro-x-uts
 
     steps:
       - uses: actions/checkout@v4
@@ -31,15 +31,16 @@ jobs:
         with:
           node-version: 22
 
-      # 1) 拉取组件库：本仓库只有宿主工程与示例页，ux-* 组件源码在私有库 anyup/uview-pro-x。
+      # 1) 拉取组件库：本仓库只有宿主工程与示例页，ux-* 组件源码在私有库 anyup/uview-pro-x-uts。
       #    私有库按“纯库仓库”组织（根目录即组件库包：package.json + components/ + index.uts…），
-      #    因此可直接检出到 uni_modules/uview-pro-x，无需二次搬运子目录。
+      #    因此可直接检出到 uni_modules/uview-pro-x（仓库名带 -uts，但目录名必须是 uview-pro-x，
+      #    否则 easycom 与示例页导入路径 @/uni_modules/uview-pro-x 全部失效），无需二次搬运子目录。
       #    跨仓库访问私有库不能用本仓库的 GITHUB_TOKEN（令牌只对当前仓库有效），
-      #    需 secrets.UVIEW_PRO_X_TOKEN（对 anyup/uview-pro-x 有 Contents 读权限）。
+      #    需 secrets.UVIEW_PRO_X_TOKEN（对 anyup/uview-pro-x-uts 有 Contents 读权限）。
       - name: Checkout uview-pro-x library
         uses: actions/checkout@v4
         with:
-          repository: anyup/uview-pro-x
+          repository: anyup/uview-pro-x-uts
           ref: ${{ github.event.inputs.uvpx_ref || 'master' }}
           token: ${{ secrets.UVIEW_PRO_X_TOKEN }}
           path: uni_modules/uview-pro-x
@@ -62,7 +63,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: hbx.tar.gz
-          key: hbuilderx-5.24
+          key: hbuilderx-5.34
 
       # 4) 安装 HBuilderX Linux CLI（hit 时使用缓存的 tar.gz 直接解压，不再 curl）
       - name: Install HBuilderX Linux CLI
