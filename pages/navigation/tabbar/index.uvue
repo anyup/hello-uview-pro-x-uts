@@ -80,7 +80,7 @@
 </template>
 
 <script setup lang="uts">
-import { useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x';
+import { useLocale, type TabbarItem } from '@/uni_modules/uview-pro-x-uts';
 import { codes } from './code';
 
 const { t } = useLocale('demo');

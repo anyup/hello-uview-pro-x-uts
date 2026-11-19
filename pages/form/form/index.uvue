@@ -193,7 +193,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale, type FormRule, type FormErrorType, type SelectListItem, type PickerOption } from '@/uni_modules/uview-pro-x';
+    import { useLocale, type FormRule, type FormErrorType, type SelectListItem, type PickerOption } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

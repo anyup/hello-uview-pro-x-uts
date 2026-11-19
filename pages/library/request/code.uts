@@ -11,15 +11,15 @@ const get = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
-import type { HttpResponse } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
+import type { HttpResponse } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 const api = http.create({ baseURL: 'https://httpbin.org' });
 
 const runGet = (): void => {
     const params = new UTSJSONObject();
-    params['demo'] = 'uview-pro-x';
+    params['demo'] = 'uview-pro-x-uts';
     params['page'] = 1;
     api.get('/get', params).then((res: any) => {
         const response = res as HttpResponse;
@@ -40,21 +40,21 @@ const post = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
-import type { HttpResponse } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
+import type { HttpResponse } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 const api = http.create({ baseURL: 'https://httpbin.org' });
 
 // 请求拦截器：数组链，按注册顺序执行
 api.interceptors.request.use((config) => {
-    config.headers['x-demo-source'] = 'uview-pro-x';
+    config.headers['x-demo-source'] = 'uview-pro-x-uts';
     return config;
 });
 
 const runPost = (): void => {
     const payload = new UTSJSONObject();
-    payload['title'] = 'uview-pro-x';
+    payload['title'] = 'uview-pro-x-uts';
     payload['body'] = 'http demo';
     payload['userId'] = 1;
     api.post('/post', payload).then((res: any) => {
@@ -76,15 +76,15 @@ const error = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
-import type { HttpError } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
+import type { HttpError } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 // 错误接口 404 且返回 JSON 体：H5 端空响应体的 404 会伴随一条 JSON 解析告警
 const errorApi = http.create({ baseURL: 'https://gitee.com/api/v5' });
 
 const runError = (): void => {
-    errorApi.get('/repos/uview-pro-x/not-found').then((res: any) => {
+    errorApi.get('/repos/uview-pro-x-uts/not-found').then((res: any) => {
         text.value = '未预期的成功';
     }).catch((e: any) => {
         const err = e as HttpError;
@@ -103,8 +103,8 @@ const cancel = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
-import type { HttpCallConfig } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
+import type { HttpCallConfig } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 
@@ -131,7 +131,7 @@ const upload = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 
@@ -167,7 +167,7 @@ const download = `
 </template>
 
 <script setup lang="uts">
-import { http } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
 
 const text = ref<string>('待发起');
 

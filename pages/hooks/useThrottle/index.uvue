@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useThrottle, useLocale } from '@/uni_modules/uview-pro-x';
+    import { useThrottle, useLocale } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

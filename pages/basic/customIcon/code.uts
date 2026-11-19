@@ -12,7 +12,7 @@ const setup = `
             src: url('/static/iconfont.ttf');
         }
      2. 可选：启动时（App.uvue 的 onLaunch）登记「前缀 → 码点表」，给码点起图标名，前缀须与上面的 font-family 同名：
-        import { \$u } from '@/uni_modules/uview-pro-x'
+        import { \$u } from '@/uni_modules/uview-pro-x-uts'
         import { customIconFont } from '@/iconfont.uts'
 
         \$u.registerIconFont('custom-icon', customIconFont)

@@ -19,7 +19,7 @@ const device = `
 </template>
 
 <script setup lang="uts">
-import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x';
+import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
 
 // 解构方式使用：const { deviceBrand } = useDeviceInfo()
 const { info } = useDeviceInfo();
@@ -58,7 +58,7 @@ const system = `
 </template>
 
 <script setup lang="uts">
-import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x';
+import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info } = useDeviceInfo();
 
@@ -98,7 +98,7 @@ const orientation = `
 </template>
 
 <script setup lang="uts">
-import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x';
+import { $u, useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info } = useDeviceInfo();
 
@@ -127,7 +127,7 @@ const usage = `
 </template>
 
 <script setup lang="uts">
-import { useDeviceInfo } from '@/uni_modules/uview-pro-x';
+import { useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info, deviceBrand, deviceModel, platform, osName } = useDeviceInfo();
 </script>

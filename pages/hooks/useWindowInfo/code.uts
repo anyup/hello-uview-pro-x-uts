@@ -19,7 +19,7 @@ const size = `
 </template>
 
 <script setup lang="uts">
-import { useWindowInfo } from '@/uni_modules/uview-pro-x';
+import { useWindowInfo } from '@/uni_modules/uview-pro-x-uts';
 
 // 解构方式使用：const { windowWidth } = useWindowInfo()
 const { info } = useWindowInfo();
@@ -59,7 +59,7 @@ const status = `
 </template>
 
 <script setup lang="uts">
-import { useWindowInfo } from '@/uni_modules/uview-pro-x';
+import { useWindowInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info } = useWindowInfo();
 
@@ -97,7 +97,7 @@ const safe = `
 </template>
 
 <script setup lang="uts">
-import { useWindowInfo } from '@/uni_modules/uview-pro-x';
+import { useWindowInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info } = useWindowInfo();
 
@@ -140,7 +140,7 @@ const usage = `
 </template>
 
 <script setup lang="uts">
-import { useWindowInfo } from '@/uni_modules/uview-pro-x';
+import { useWindowInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { info, windowWidth, windowHeight, safeArea, safeAreaInsets } = useWindowInfo();
 </script>

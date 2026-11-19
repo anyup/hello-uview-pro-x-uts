@@ -1,4 +1,4 @@
-import { http } from '@/uni_modules/uview-pro-x';
+import { http } from '@/uni_modules/uview-pro-x-uts';
 import { setupInterceptors } from './interceptors';
 
 /** 演示数据源：httpbin 提供回显、延迟与图片 */
@@ -7,7 +7,7 @@ const DEMO_BASE = 'https://httpbin.org';
 /** 默认请求头：模块级只建一次 */
 const defaultHeaders = new UTSJSONObject();
 defaultHeaders['content-type'] = 'application/json';
-defaultHeaders['x-client'] = 'uview-pro-x';
+defaultHeaders['x-client'] = 'uview-pro-x-uts';
 
 /**
  * 业务实例：模块级单例

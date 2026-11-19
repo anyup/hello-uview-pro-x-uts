@@ -47,8 +47,8 @@
 </template>
 
 <script setup lang="uts">
-    import { http, useLocale } from '@/uni_modules/uview-pro-x';
-    import type { HttpCallConfig, HttpError, HttpResponse } from '@/uni_modules/uview-pro-x';
+    import { http, useLocale } from '@/uni_modules/uview-pro-x-uts';
+    import type { HttpCallConfig, HttpError, HttpResponse } from '@/uni_modules/uview-pro-x-uts';
     import { sinceOf } from '@/version';
     import { codes } from './code';
 
@@ -69,7 +69,7 @@
 
     // 请求拦截器：数组链，按注册顺序执行；这里统一追加演示头
     api.interceptors.request.use((config) => {
-        config.headers['x-demo-source'] = 'uview-pro-x';
+        config.headers['x-demo-source'] = 'uview-pro-x-uts';
         return config;
     });
 
@@ -90,7 +90,7 @@
     const runGet = (): void => {
         getText.value = t('request.loading');
         const params = new UTSJSONObject();
-        params['demo'] = 'uview-pro-x';
+        params['demo'] = 'uview-pro-x-uts';
         params['page'] = 1;
         api.get('/get', params).then((res: any) => {
             const response = res as HttpResponse;
@@ -105,7 +105,7 @@
     const runPost = (): void => {
         postText.value = t('request.sending');
         const payload = new UTSJSONObject();
-        payload['title'] = 'uview-pro-x';
+        payload['title'] = 'uview-pro-x-uts';
         payload['body'] = 'http demo';
         payload['userId'] = 1;
         api.post('/post', payload).then((res: any) => {
@@ -121,7 +121,7 @@
     /** 404：非 2xx 走 ERR_BAD_RESPONSE，response 随错误带回 */
     const runError = (): void => {
         errorText.value = t('request.loading');
-        errorApi.get('/repos/uview-pro-x/not-found').then((res: any) => {
+        errorApi.get('/repos/uview-pro-x-uts/not-found').then((res: any) => {
             errorText.value = t('request.errorUnexpected');
         }).catch((e: any) => {
             const err = e as HttpError;

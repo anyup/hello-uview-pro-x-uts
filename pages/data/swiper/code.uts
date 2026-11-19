@@ -33,7 +33,7 @@ const mode = `
 </template>
 
 <script setup lang="uts">
-import type { SwiperMode } from '@/uni_modules/uview-pro-x';
+import type { SwiperMode } from '@/uni_modules/uview-pro-x-uts';
 
 type SwiperItem = {
     image: string;

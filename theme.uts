@@ -1,7 +1,7 @@
 // 此自定义uView Pro主题生成于2025-11-29 13:18
 // 地址：https://uviewpro.cn/zh/guide/themeGenerate.html
 
-import { BASE_THEME_NAME } from '@/uni_modules/uview-pro-x';
+import { BASE_THEME_NAME } from '@/uni_modules/uview-pro-x-uts';
 
 export default [
     // 内置基线主题：内置主题默认不再自动进入列表，需要它出现在切换列表里就显式声明同名项

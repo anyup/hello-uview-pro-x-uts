@@ -21,7 +21,7 @@ const basic = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const targetObj = ref<UTSJSONObject>({
     name: '张三',
@@ -59,7 +59,7 @@ const array = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const targetArr = ref<UTSJSONObject>({ items: [1, 2] });
 const sourceArr = ref<UTSJSONObject>({ items: [3, 4] });
@@ -89,7 +89,7 @@ const nested = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const complexTarget = ref<UTSJSONObject>({
     user: { profile: { name: '张三', settings: { theme: 'light' } } }

@@ -36,7 +36,7 @@ const theme = `
 </template>
 
 <script setup lang="uts">
-import { useTheme } from '@/uni_modules/uview-pro-x';
+import { useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { getCurrentTheme } = useTheme();
 
@@ -74,7 +74,7 @@ const dark = `
 </template>
 
 <script setup lang="uts">
-import { useTheme } from '@/uni_modules/uview-pro-x';
+import { useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { getDarkMode } = useTheme();
 
@@ -110,7 +110,7 @@ const locale = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { getCurrentLocale } = useLocale();
 
@@ -151,7 +151,7 @@ const events = `
 </template>
 
 <script setup lang="uts">
-import { useTheme } from '@/uni_modules/uview-pro-x';
+import { useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { getCurrentTheme, getDarkMode } = useTheme();
 

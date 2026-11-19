@@ -106,7 +106,7 @@
 </template>
 
 <script setup lang="uts">
-import { $u, useLocale, useTheme, usePageScroll, type DarkMode } from '@/uni_modules/uview-pro-x';
+import { $u, useLocale, useTheme, usePageScroll, type DarkMode } from '@/uni_modules/uview-pro-x-uts';
 import { componentCategories } from './config';
 import { currentNewVersion, LIB_VERSION_TEXT } from '@/version';
 

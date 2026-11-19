@@ -130,7 +130,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale } from '@/uni_modules/uview-pro-x';
+    import { useLocale } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     // 使用全局 useLocale - 解构方式

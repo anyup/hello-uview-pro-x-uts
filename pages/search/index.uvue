@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="uts">
-import { $u, useLocale, useTheme } from '@/uni_modules/uview-pro-x';
+import { $u, useLocale, useTheme } from '@/uni_modules/uview-pro-x-uts';
 import { componentCategories } from '../tabbar/config';
 
 /** 搜索结果项 */

@@ -1,4 +1,4 @@
-import type { HttpError, HttpInstance, HttpResponse, ResolvedHttpConfig } from '@/uni_modules/uview-pro-x';
+import type { HttpError, HttpInstance, HttpResponse, ResolvedHttpConfig } from '@/uni_modules/uview-pro-x-uts';
 
 /** 演示用 token 存储键：真实项目换成登录态写入的键 */
 const TOKEN_KEY = 'request-demo-token';

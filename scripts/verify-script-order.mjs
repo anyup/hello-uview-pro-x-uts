@@ -13,7 +13,7 @@ import { join, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = join(fileURLToPath(import.meta.url), '..');
-const componentsBase = join(__dirname, '../uni_modules/uview-pro-x/components');
+const componentsBase = join(__dirname, '../uni_modules/uview-pro-x-uts/components');
 
 /**
  * 提取最外层主模板完整块。SFC 主 <template> 内部常含 <template v-if>/<template v-else>/

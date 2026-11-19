@@ -459,7 +459,7 @@ const customStyle = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const customStyle = computed((): UTSJSONObject => {
     const style = createStyle();

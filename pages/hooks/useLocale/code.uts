@@ -13,7 +13,7 @@ const current = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { currentLocale } = useLocale();
 
@@ -42,7 +42,7 @@ const switchBlock = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { currentLocale, setLocale } = useLocale();
 
@@ -78,7 +78,7 @@ const translate = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale();
 
@@ -108,7 +108,7 @@ const placeholder = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale();
 
@@ -133,7 +133,7 @@ const namespace = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 // 指定命名空间后，t 的 key 不必再带前缀
 const { t: uploadT } = useLocale('uUpload');
@@ -168,7 +168,7 @@ const locales = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { currentLocale, locales } = useLocale();
 
@@ -210,7 +210,7 @@ const merge = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale();
 
@@ -247,7 +247,7 @@ const builtin = `
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale();
 

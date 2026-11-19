@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale, useTheme } from '@/uni_modules/uview-pro-x';
+    import { useLocale, useTheme } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t, getCurrentLocale } = useLocale('demo');

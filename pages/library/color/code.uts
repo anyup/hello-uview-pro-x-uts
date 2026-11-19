@@ -23,7 +23,7 @@ const palette = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type ColorRow = {
     name: string;
@@ -71,7 +71,7 @@ const mix = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type MixRow = {
     desc: string;
@@ -127,7 +127,7 @@ const theme = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type FlagRow = {
     desc: string;

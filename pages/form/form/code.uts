@@ -26,8 +26,8 @@ const basic = `
 </template>
 
 <script setup lang="uts">
-import type { FormRule } from '@/uni_modules/uview-pro-x';
-import type { PickerOption } from '@/uni_modules/uview-pro-x';
+import type { FormRule } from '@/uni_modules/uview-pro-x-uts';
+import type { PickerOption } from '@/uni_modules/uview-pro-x-uts';
 
 const formRef = ref<any | null>(null);
 const pickerShow = ref<boolean>(false);
@@ -107,7 +107,7 @@ const config = `
 </template>
 
 <script setup lang="uts">
-import type { FormErrorType } from '@/uni_modules/uview-pro-x';
+import type { FormErrorType } from '@/uni_modules/uview-pro-x-uts';
 
 const model = ref<UTSJSONObject>(new UTSJSONObject());
 model.value['name'] = '';

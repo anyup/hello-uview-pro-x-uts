@@ -37,7 +37,7 @@ const panel = `
 </template>
 
 <script setup lang="uts">
-import { $u, useLocale, useTheme } from '@/uni_modules/uview-pro-x';
+import { $u, useLocale, useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { themes, currentTheme, darkMode, setTheme, setDarkMode, isInDarkMode } = useTheme();
 const { currentLocale, setLocale } = useLocale();
@@ -93,7 +93,7 @@ const dark = `
 </template>
 
 <script setup lang="uts">
-import { useTheme, type SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import { useTheme, type SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const { darkMode, setDarkMode, toggleDarkMode } = useTheme();
 
@@ -145,7 +145,7 @@ const themes = `
 </template>
 
 <script setup lang="uts">
-import { $u, useTheme } from '@/uni_modules/uview-pro-x';
+import { $u, useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { themes, currentTheme, setTheme } = useTheme();
 
@@ -195,7 +195,7 @@ const palette = `
 </template>
 
 <script setup lang="uts">
-import { useTheme } from '@/uni_modules/uview-pro-x';
+import { useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { currentTheme } = useTheme();
 
@@ -258,7 +258,7 @@ const state = `
 </template>
 
 <script setup lang="uts">
-import { useLocale, useTheme } from '@/uni_modules/uview-pro-x';
+import { useLocale, useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { themes, currentTheme, darkMode, isInDarkMode } = useTheme();
 const { t } = useLocale('demo');
@@ -315,7 +315,7 @@ const cssVars = `
 </template>
 
 <script setup lang="uts">
-import { useTheme } from '@/uni_modules/uview-pro-x';
+import { useTheme } from '@/uni_modules/uview-pro-x-uts';
 
 const { cssVars } = useTheme();
 
@@ -350,7 +350,7 @@ const reset = `
 </template>
 
 <script setup lang="uts">
-import { useTheme, type Theme } from '@/uni_modules/uview-pro-x';
+import { useTheme, type Theme } from '@/uni_modules/uview-pro-x-uts';
 
 const { themes, initTheme, setDarkMode } = useTheme();
 
@@ -385,7 +385,7 @@ const usage = `
 </template>
 
 <script setup lang="uts">
-import { useTheme, type Theme } from '@/uni_modules/uview-pro-x';
+import { useTheme, type Theme } from '@/uni_modules/uview-pro-x-uts';
 
 const { themes, initTheme } = useTheme();
 

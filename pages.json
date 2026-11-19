@@ -47,7 +47,7 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^ux-(.*)": "@/uni_modules/uview-pro-x/components/ux-$1/ux-$1.uvue"
+      "^ux-(.*)": "@/uni_modules/uview-pro-x-uts/components/ux-$1/ux-$1.uvue"
     }
   },
   "subPackages": [

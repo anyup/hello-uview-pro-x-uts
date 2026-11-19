@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="uts">
-    import { $u, useCountDown, useLocale, type CountDownTime } from '@/uni_modules/uview-pro-x';
+    import { $u, useCountDown, useLocale, type CountDownTime } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

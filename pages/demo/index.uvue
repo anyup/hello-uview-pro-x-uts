@@ -90,7 +90,7 @@
 </template>
 
 <script setup lang="uts">
-import { useLocale } from '@/uni_modules/uview-pro-x';
+import { useLocale } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale('demo');
 

@@ -16,7 +16,7 @@ const basic = `
 </template>
 
 <script setup lang="uts">
-import { usePageScroll } from '@/uni_modules/uview-pro-x';
+import { usePageScroll } from '@/uni_modules/uview-pro-x-uts';
 
 // 页面滚动距离：页面层 onPageScroll 在页面脚本里注册（小程序端编译期需要），容器滚动绑 onScroll
 const { scrollTop, setScrollTop } = usePageScroll();
@@ -59,7 +59,7 @@ const shape = `
 </template>
 
 <script setup lang="uts">
-import { usePageScroll } from '@/uni_modules/uview-pro-x';
+import { usePageScroll } from '@/uni_modules/uview-pro-x-uts';
 
 // 页面滚动距离：页面层 onPageScroll 在页面脚本里注册（小程序端编译期需要），容器滚动绑 onScroll
 const { scrollTop, setScrollTop } = usePageScroll();
@@ -98,7 +98,7 @@ const tips = `
 </template>
 
 <script setup lang="uts">
-import { usePageScroll } from '@/uni_modules/uview-pro-x';
+import { usePageScroll } from '@/uni_modules/uview-pro-x-uts';
 
 // 页面滚动距离：页面层 onPageScroll 在页面脚本里注册（小程序端编译期需要），容器滚动绑 onScroll
 const { scrollTop, setScrollTop } = usePageScroll();
@@ -137,7 +137,7 @@ const position = `
 </template>
 
 <script setup lang="uts">
-import { usePageScroll } from '@/uni_modules/uview-pro-x';
+import { usePageScroll } from '@/uni_modules/uview-pro-x-uts';
 
 // 页面滚动距离：页面层 onPageScroll 在页面脚本里注册（小程序端编译期需要），容器滚动绑 onScroll
 const { scrollTop, setScrollTop } = usePageScroll();
@@ -182,7 +182,7 @@ const iconStyle = `
 </template>
 
 <script setup lang="uts">
-import { usePageScroll } from '@/uni_modules/uview-pro-x';
+import { usePageScroll } from '@/uni_modules/uview-pro-x-uts';
 
 // 页面滚动距离：页面层 onPageScroll 在页面脚本里注册（小程序端编译期需要），容器滚动绑 onScroll
 const { scrollTop, setScrollTop } = usePageScroll();

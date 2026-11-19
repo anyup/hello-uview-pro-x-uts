@@ -11,7 +11,7 @@ const basic = `
 </template>
 
 <script setup lang="uts">
-import type { ActionSheetItem } from '@/uni_modules/uview-pro-x';
+import type { ActionSheetItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 
@@ -35,7 +35,7 @@ const tips = `
 </template>
 
 <script setup lang="uts">
-import type { ActionSheetItem } from '@/uni_modules/uview-pro-x';
+import type { ActionSheetItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 
@@ -59,7 +59,7 @@ const subText = `
 </template>
 
 <script setup lang="uts">
-import type { ActionSheetItem } from '@/uni_modules/uview-pro-x';
+import type { ActionSheetItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 
@@ -82,7 +82,7 @@ const disabled = `
 </template>
 
 <script setup lang="uts">
-import type { ActionSheetItem } from '@/uni_modules/uview-pro-x';
+import type { ActionSheetItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 
@@ -106,7 +106,7 @@ const noCancel = `
 </template>
 
 <script setup lang="uts">
-import type { ActionSheetItem } from '@/uni_modules/uview-pro-x';
+import type { ActionSheetItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 

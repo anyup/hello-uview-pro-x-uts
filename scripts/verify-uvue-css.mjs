@@ -24,7 +24,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const SCAN_DIRS = ['pages', 'components', 'uni_modules/uview-pro-x/components']
+const SCAN_DIRS = ['pages', 'components', 'uni_modules/uview-pro-x-uts/components']
 const SCAN_FILES = ['App.uvue']
 
 // 条件编译中代表「App 端」的平台标识

@@ -20,7 +20,7 @@ const type = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -55,7 +55,7 @@ const number = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -92,7 +92,7 @@ const string = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -130,7 +130,7 @@ const regex = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -167,7 +167,7 @@ const struct = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -208,7 +208,7 @@ const media = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;
@@ -247,7 +247,7 @@ const empty = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 type TestItem = {
     desc: string;

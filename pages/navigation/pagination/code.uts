@@ -43,7 +43,7 @@ const custom = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const current = ref<number>(1);
 

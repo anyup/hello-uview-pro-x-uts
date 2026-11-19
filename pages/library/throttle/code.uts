@@ -35,7 +35,7 @@ const throttle = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const clickCount = ref(0);
 const executeCount = ref(0);
@@ -65,7 +65,7 @@ const delay = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const executeCount = ref(0);
 

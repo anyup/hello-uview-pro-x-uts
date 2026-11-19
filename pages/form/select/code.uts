@@ -19,7 +19,7 @@ const single = `
 </template>
 
 <script setup lang="uts">
-import type { SelectListItem } from '@/uni_modules/uview-pro-x';
+import type { SelectListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const result = ref<string>('');
@@ -63,7 +63,7 @@ const multi = `
 </template>
 
 <script setup lang="uts">
-import type { SelectListItem } from '@/uni_modules/uview-pro-x';
+import type { SelectListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const result = ref<string>('');
@@ -121,7 +121,7 @@ const cascade = `
 </template>
 
 <script setup lang="uts">
-import type { SelectListItem } from '@/uni_modules/uview-pro-x';
+import type { SelectListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const result = ref<string>('');

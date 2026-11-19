@@ -23,7 +23,7 @@ const measure = `
 </template>
 
 <script setup lang="uts">
-import { $u, useRect } from '@/uni_modules/uview-pro-x';
+import { $u, useRect } from '@/uni_modules/uview-pro-x-uts';
 
 // 解构方式使用：const { getRect } = useRect()
 const { getRect } = useRect();
@@ -86,7 +86,7 @@ const refresh = `
 </template>
 
 <script setup lang="uts">
-import { useRect } from '@/uni_modules/uview-pro-x';
+import { useRect } from '@/uni_modules/uview-pro-x-uts';
 
 const { getRect } = useRect();
 
@@ -117,7 +117,7 @@ const usage = `
 </template>
 
 <script setup lang="uts">
-import { useRect } from '@/uni_modules/uview-pro-x';
+import { useRect } from '@/uni_modules/uview-pro-x-uts';
 
 const { getRect } = useRect();
 </script>

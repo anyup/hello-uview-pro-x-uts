@@ -94,7 +94,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale, type SearchShape, type InputAlign } from '@/uni_modules/uview-pro-x';
+    import { useLocale, type SearchShape, type InputAlign } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

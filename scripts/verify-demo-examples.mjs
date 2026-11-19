@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = join(fileURLToPath(import.meta.url), '..');
 const root = join(__dirname, '..');
-const componentsBase = join(root, 'uni_modules/uview-pro-x/components');
+const componentsBase = join(root, 'uni_modules/uview-pro-x-uts/components');
 const pagesBase = join(root, 'pages');
 const registryPath = join(__dirname, 'demo-omissions.json');
 

@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="uts">
-	import { $u, useLocale, useTheme, type TabbarItem } from '@/uni_modules/uview-pro-x'
+	import { $u, useLocale, useTheme, type TabbarItem } from '@/uni_modules/uview-pro-x-uts'
 
 	defineOptions({
 		name: 'demo-page',

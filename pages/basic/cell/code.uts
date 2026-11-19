@@ -24,7 +24,7 @@ const group = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const groupTitleStyle = computed((): UTSJSONObject => {
     const style = createStyle();
@@ -47,7 +47,7 @@ const icon = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const iconStyle = computed((): UTSJSONObject => {
     const style = createStyle();
@@ -99,7 +99,7 @@ const width = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const titleWidthBg = computed((): UTSJSONObject => {
     const style = createStyle();
@@ -140,7 +140,7 @@ const custom = `
 </template>
 
 <script setup lang="uts">
-import { createStyle } from '@/uni_modules/uview-pro-x';
+import { createStyle } from '@/uni_modules/uview-pro-x-uts';
 
 const titleStyle = computed((): UTSJSONObject => {
     const style = createStyle();

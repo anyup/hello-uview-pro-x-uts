@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="uts">
-    import { $u, useLocale } from '@/uni_modules/uview-pro-x'
+    import { $u, useLocale } from '@/uni_modules/uview-pro-x-uts'
 
     defineOptions({
         name: 'demo-block',

@@ -24,7 +24,7 @@ const basic = `
 </template>
 
 <script setup lang="uts">
-import { useLocale, type PopupMode } from '@/uni_modules/uview-pro-x';
+import { useLocale, type PopupMode } from '@/uni_modules/uview-pro-x-uts';
 
 const { t } = useLocale('demo');
 const show = ref<boolean>(false);
@@ -185,7 +185,7 @@ const size = `
 </template>
 
 <script setup lang="uts">
-import type { PopupMode } from '@/uni_modules/uview-pro-x';
+import type { PopupMode } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const mode = ref<PopupMode>('bottom');
@@ -422,7 +422,7 @@ const close = `
 </template>
 
 <script setup lang="uts">
-import { $u, type PopupCloseIconPos } from '@/uni_modules/uview-pro-x';
+import { $u, type PopupCloseIconPos } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const closeable = ref<boolean>(true);
@@ -531,7 +531,7 @@ const safeArea = `
 </template>
 
 <script setup lang="uts">
-import { useSafeArea, useWindowInfo } from '@/uni_modules/uview-pro-x';
+import { useSafeArea, useWindowInfo } from '@/uni_modules/uview-pro-x-uts';
 
 /** 组件内部同样用这两个 hook 计算根节点 padding，这里取真实数值用于回显 */
 const { bottom } = useSafeArea();
@@ -786,7 +786,7 @@ const beforeClose = `
 </template>
 
 <script setup lang="uts">
-import type { BeforeChangeInterceptor } from '@/uni_modules/uview-pro-x';
+import type { BeforeChangeInterceptor } from '@/uni_modules/uview-pro-x-uts';
 
 const show = ref<boolean>(false);
 const count = ref<number>(0);

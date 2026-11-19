@@ -37,8 +37,8 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale } from '@/uni_modules/uview-pro-x';
-    import type { HttpError, HttpResponse } from '@/uni_modules/uview-pro-x';
+    import { useLocale } from '@/uni_modules/uview-pro-x-uts';
+    import type { HttpError, HttpResponse } from '@/uni_modules/uview-pro-x-uts';
     import { sinceOf } from '@/version';
     import { request } from '../demo-api/request';
     import { cdnRequest, installCdnInterceptors, isCdnInterceptorsInstalled } from '../demo-api/cdn';

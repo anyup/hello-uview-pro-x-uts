@@ -52,7 +52,7 @@
 <script setup lang="uts">
     import { storeToRefs } from 'pinia';
     import { useCounterStore } from '@/store/counter.uts';
-    import { useLocale } from '@/uni_modules/uview-pro-x';
+    import { useLocale } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

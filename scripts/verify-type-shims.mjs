@@ -17,7 +17,7 @@ import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = join(fileURLToPath(import.meta.url), '..');
-const libRoot = join(__dirname, '../uni_modules/uview-pro-x');
+const libRoot = join(__dirname, '../uni_modules/uview-pro-x-uts');
 
 const argv = process.argv.slice(2);
 const json = argv.includes('--json');

@@ -26,7 +26,7 @@ const object = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const originalObj = ref<UTSJSONObject>({
     name: '张三',
@@ -62,7 +62,7 @@ const array = `
 </template>
 
 <script setup lang="uts">
-import { $u } from '@/uni_modules/uview-pro-x';
+import { $u } from '@/uni_modules/uview-pro-x-uts';
 
 const originalArr = ref<any[]>([1, 2, { a: 3 }]);
 const clonedArr = ref<any[]>([]);

@@ -19,7 +19,7 @@ const value = `
 </template>
 
 <script setup lang="uts">
-import { useSafeArea } from '@/uni_modules/uview-pro-x';
+import { useSafeArea } from '@/uni_modules/uview-pro-x-uts';
 
 // 解构方式使用：const { top, bottom } = useSafeArea()
 const { top, bottom } = useSafeArea();
@@ -50,7 +50,7 @@ const preview = `
 </template>
 
 <script setup lang="uts">
-import { $u, useSafeArea } from '@/uni_modules/uview-pro-x';
+import { $u, useSafeArea } from '@/uni_modules/uview-pro-x-uts';
 
 const { top, bottom } = useSafeArea();
 
@@ -102,7 +102,7 @@ const usage = `
 </template>
 
 <script setup lang="uts">
-import { useSafeArea } from '@/uni_modules/uview-pro-x';
+import { useSafeArea } from '@/uni_modules/uview-pro-x-uts';
 
 const { top, bottom } = useSafeArea();
 </script>

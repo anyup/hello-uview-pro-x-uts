@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="uts">
-    import { useLocale, useWindowInfo, useDeviceInfo } from '@/uni_modules/uview-pro-x';
+    import { useLocale, useWindowInfo, useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

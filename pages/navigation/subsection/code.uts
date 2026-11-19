@@ -10,7 +10,7 @@ const button = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'Tab1' },
@@ -33,7 +33,7 @@ const subsection = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'Tab1' },
@@ -56,7 +56,7 @@ const color = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'A' },
@@ -76,7 +76,7 @@ const noAnim = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'Tab1' },
@@ -99,7 +99,7 @@ const custom = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'Day' },
@@ -120,7 +120,7 @@ const disabled = `
 </template>
 
 <script setup lang="uts">
-import type { SubsectionListItem } from '@/uni_modules/uview-pro-x';
+import type { SubsectionListItem } from '@/uni_modules/uview-pro-x-uts';
 
 const list: SubsectionListItem[] = [
     { name: 'Tab1' },

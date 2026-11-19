@@ -8,11 +8,11 @@
 | 仓库 | 可见性 | 内容 | 本地位置 |
 |------|--------|------|----------|
 | `anyup/hello-uview-pro-x-uts` | 公开 | 本仓库：示例页（`pages/`）、demo 容器组件（`components/`）、`pages.json` / `manifest.json` / `App.uvue` 等宿主工程 | 仓库根 |
-| `anyup/uview-pro-x` | 私有 | 组件库源码：`package.json` + `components/ux-*` + `libs/` + `locale/` + `types/` + `static/` + `theme.scss`/`index.scss`/`index.uts` | `uni_modules/uview-pro-x/` |
+| `anyup/uview-pro-x-uts` | 私有 | 组件库源码：`package.json` + `components/ux-*` + `libs/` + `locale/` + `types/` + `static/` + `theme.scss`/`index.scss`/`index.uts` | `uni_modules/uview-pro-x-uts/` |
 
-- **`uni_modules/uview-pro-x/` 是一个独立的 git 仓库**（私有库的工作副本），不被本仓库跟踪：改组件库源码后要**在私有库提交推送**，别 `git add` 到本仓库。
-- **打包发布**：两个仓库各自带一份 `.github/workflows/deploy-h5-edgeone.yml`，互相拉取对方仓库→装配编译→发布到同一个 EdgeOne Pages 项目 `h5-uviewpro-x`（自定义域名 `h5-x.uviewpro.cn`，勿写成带连字符的 `h5-uview-pro-x`，否则会新建第二个项目）。组件库仓库在推送 tag（`v*`，随发布打标签）或手动触发时发布，普通提交不触发；公开仓库仅手动触发（互为补充）。
-  - 本仓库产物流程需要 secrets：`UVIEW_PRO_X_TOKEN`（读私有库，可换成只读 Deploy Key）、`DCLOUD_USERNAME` / `DCLOUD_PASSWORD`、`EDGEONE_API_TOKEN`。
+- **`uni_modules/uview-pro-x-uts/` 是一个独立的 git 仓库**（私有库的工作副本），不被本仓库跟踪：改组件库源码后要**在私有库提交推送**，别 `git add` 到本仓库。
+- **打包发布**：本仓库带一份 `.github/workflows/deploy-h5-edgeone.yml`，组件库源码就在 `uni_modules/uview-pro-x-uts/` 里，workflow **不需要拉取私有库**，直接编译本工程并发布到 EdgeOne Pages 项目 `h5-uviewpro-x-uts`（自定义域名 `h5-uts.uviewpro.cn`）。项目名勿写成带连字符的 `h5-uview-pro-x-uts`，也勿与 TS 版的 `h5-uviewpro-x`（`h5-x.uviewpro.cn`）混用，否则会新建多余项目。push 到 `master` 或手动触发均会发布。
+  - 本仓库产物流程需要 secrets：`DCLOUD_USERNAME` / `DCLOUD_PASSWORD`、`EDGEONE_API_TOKEN`。
 - **无 `src/` 前缀**：源码路径直接是 `pages/...`、`uni_modules/...`，不要臆造 `src/` 前缀。
 
 ## 架构分层
@@ -26,16 +26,16 @@
 | L4 | `pages/` | 示例页面 —— 依赖 L0-L3 |
 | L5 | `App.uvue`, `main.uts`, `index.uts` | 入口点 —— 依赖 L0-L4 |
 
-依赖方向不可逆；上表的 L0-L5 对应 `uni_modules/uview-pro-x/` 内部结构。
+依赖方向不可逆；上表的 L0-L5 对应 `uni_modules/uview-pro-x-uts/` 内部结构。
 
 ## 组件库约定（ux-*）
 
 | 项 | 约定 |
 |---|---|
 | 目录 / 文件 | `components/ux-{name}/`，内含 `ux-{name}.uvue`（同级 `types.uts`） |
-| 注册 | easycom 自动解析（[pages.json](pages.json)）：`"^ux-(.*)": "@/uni_modules/uview-pro-x/components/ux-$1/ux-$1.uvue"`；组件内嵌兄弟组件须**显式 import**，不走 easycom（同级组件目录互不导入，组件组合 import 属合法耦合） |
+| 注册 | easycom 自动解析（[pages.json](pages.json)）：`"^ux-(.*)": "@/uni_modules/uview-pro-x-uts/components/ux-$1/ux-$1.uvue"`；组件内嵌兄弟组件须**显式 import**，不走 easycom（同级组件目录互不导入，组件组合 import 属合法耦合） |
 | defineOptions | `name: 'ux-{name}'`；`styleIsolation: 'isolated'` + `virtualHost: true`（`virtualHost` 需 `#ifndef MP-TOUTIAO` 包裹） |
-| 取色 | SCSS：`@import '@/uni_modules/uview-pro-x/theme.scss'` 后用 `$u-*` 变量（`$u-` 令牌前缀是库的公共主题 API，不随组件改名）；脚本：`$u.color.*`（`libs/config/color.uts` 的 reactive）。**禁硬编码色值、禁用 CSS 变量** |
+| 取色 | SCSS：`@import '@/uni_modules/uview-pro-x-uts/theme.scss'` 后用 `$u-*` 变量（`$u-` 令牌前缀是库的公共主题 API，不随组件改名）；脚本：`$u.color.*`（`libs/config/color.uts` 的 reactive）。**禁硬编码色值、禁用 CSS 变量** |
 | 全局工具类自包含 | `isolated` 下组件不能引用全局 class：用到的全局工具类需在组件自身 `<style>` 内 `@import '../../libs/styles/global.scss'`；mixin 按需引叶子文件（如 `mixins/hairline.scss`），勿同时 import 统一入口（重复定义）；类型工具类在组件本地定义 |
 | 写法权威 | `.agents/skills/component-writer/references/`（spec / recipes / samples）为唯一权威；改后跑 `scripts/verify-script-order.mjs` 门禁（段序 / 命名 / 模板 ref），须 0 不合规 |
 
@@ -49,9 +49,9 @@
 - **每页必带 `code.uts`**：一个 `demo-block` 对应一个片段，`codes.<key>` 与页内 `:code` 同名；片段自包含（含 `template` + `script`），**不得出现 `demo-page` / `demo-block` / `.demo-*` 类**。说明型区块不绑 `:code`。`codes` 导出必须写成**多行**（`export const codes = {` / 每项一行 / `};`），门禁的 `parseCodesKeys` 正则要求 `};` 前有换行，单行写法会被判成「导出未定义」。
 - 列表最后一项的分隔线由**数据层 `last` 字段**控制（`:border-bottom="!item.last"`），模板里**禁读源数组**（`list.length - 1` / `list[index]` 在 Vapor 下可能原生崩溃）。
 - **演示内容组件优先**：列表 → `ux-cell-group` + `ux-cell-item`，按钮 → `ux-button`（多个横排用 `ux-row :gutter` + `ux-col :span`，栅格总数 **12**，三等分用 `:span="4"`），输入 → `ux-input`，状态 → `ux-tag`，说明 → `ux-alert-tips`（「使用说明」区块统一 `type="primary"`，`type="info"` 只用于组件自身的主题演示），间距 → `ux-gap`；**不给 `ux-*` 写 `class` / `:class`**（门禁会判违规），`custom-style` 只在动态数值/颜色时使用。
-- 导入口径：示例页与 `code.uts` 只从库入口导入 `import { $u, useXxx, type Xxx } from '@/uni_modules/uview-pro-x'`，**禁 `libs/` / `types/` / `locale/` 等下级路径**（加密版插件不支持下级目录导入）。
+- 导入口径：示例页与 `code.uts` 只从库入口导入 `import { $u, useXxx, type Xxx } from '@/uni_modules/uview-pro-x-uts'`，**禁 `libs/` / `types/` / `locale/` 等下级路径**（加密版插件不支持下级目录导入）。
 - 公共样式 `style/demo.scss`（`App.uvue` 中全局引入）。预定义类名：`.demo-page` / `.demo-header` / `.demo-title` / `.demo-card` / `.demo-card-title` / `.demo-item` / `.demo-desc` / `.demo-result` / `.demo-result-success|error|warning` / `.demo-btn`。**新增页不往 `demo.scss` 加类**，控件交给 `ux-*`；旧 `.demo-btn*` / `.demo-item*` 逐步退场。
-- 页面写法（消费侧规范）：`.agents/skills/uview-pro-x/references/`。
+- 页面写法（消费侧规范）：`.agents/skills/uview-pro-x-uts/references/`。
 
 ## 验证（默认不跑自动验证）
 
@@ -84,7 +84,7 @@
 | `npm run release:undo` | 撤销未推送的本地发布：删除两仓标签并把发布提交退回暂存区（不回退文件内容） |
 | `npm run changelog*` | 单独生成日志（`current` / `last` / `all`，带或不带 emoji）；`changelog:release` 写根 `CHANGELOG.md`、`changelog:lib` 写组件库、`changelog:docs` 写文档库，三者同源 |
 
-- 版本号写入本仓库 `package.json`，并同步组件库 `uni_modules/uview-pro-x/package.json` 与文档库 `uview-pro-x-uts-doc/package.json`；**三份日志同源、内容一致**：均由 `组件库最近标签..HEAD` + `主仓库最近标签..HEAD` 合并生成（`changelog:release` / `changelog:lib` / `changelog:docs`）；三份日志的新版本标题统一为 `## x.y.z（YYYY-MM-DD）`（中文全角括号包裹日期），文档库 1.0.5 及以前的历史版本保留原格式、不回填；生成的日志条目**不带提交 hash**。
+- 版本号写入本仓库 `package.json`，并同步组件库 `uni_modules/uview-pro-x-uts/package.json` 与文档库 `uview-pro-x-uts-doc/package.json`；**三份日志同源、内容一致**：均由 `组件库最近标签..HEAD` + `主仓库最近标签..HEAD` 合并生成（`changelog:release` / `changelog:lib` / `changelog:docs`）；三份日志的新版本标题统一为 `## x.y.z（YYYY-MM-DD）`（中文全角括号包裹日期），文档库 1.0.5 及以前的历史版本保留原格式、不回填；生成的日志条目**不带提交 hash**。
 - 文档库只同步版本号与 `docs/zh|en/components/changelog.md`（中英内容一致，英文不翻译），**不提交、不打标签**，`release:undo` 也不回退文档库改动。
 - 发布时组件库作为独立仓库**自动提交并打同名标签**（`--push` 时跟随主仓库推送，默认不推送）；组件库提交限定为 `package.json` + `changelog.md`，不带上组件库工作区其他改动。
 - 主仓库发布提交只包含 `package.json` 与 `CHANGELOG.md`，不会带上工作区其他改动（嵌套仓库、历史未提交改动均不进提交）。
@@ -96,7 +96,7 @@
 |---|---|
 | `.agents/skills/component-writer/` | **ux-* 组件编写**（新增 / 整改 / 优化）唯一权威：`references/spec` + `recipes` + `samples`（样板 ux-button / ux-navbar）；`scripts/verify-script-order.mjs` 校验 |
 | `.agents/skills/migrate-component/` | 存量组件从 uView Pro 版本搬过来时的流程与配方（已很少用，按需）：`references/` 含 `error-patterns` 命中表、`recipes` 配方索引 |
-| `.agents/skills/uview-pro-x/` | 消费侧：在外部 uni-app x 项目用 uview-pro-x 写页面的自包含规范（随技能发货 API 卡片，本仓库示例页同样遵循） |
+| `.agents/skills/uview-pro-x-uts/` | 消费侧：在外部 uni-app x 项目用 uview-pro-x-uts 写页面的自包含规范（随技能发货 API 卡片，本仓库示例页同样遵循） |
 | `.agents/skills/uview-pro/` | 消费侧：普通 uni-app（非 x，`u-*` + TS）项目的同类规范，服务兄弟项目 |
 | `.agents/skills/uniappx-crash-triage/` | App 端（安卓真机）原生崩溃排查流程：日志取证 → dump 指纹比对 → 隔离实验 |
 | `.agents/plan.md` | 一期计划唯一权威：覆盖度（源库→x 库迁移进度）、演示入口批次、阶段与执行机制 |
@@ -109,6 +109,6 @@
 
 ## 规则
 
-- **参考库字眼隔离**：`uni_modules/uview-pro-x` 的代码与注释**不出现参考库名称**（含其组件名前缀、CSS 变量名，也不用改写的占位词），注释写成自洽的规则描述；`.agents/` 技能文档可且应保留真实名称。
-- 命名规范仅约束 `uni_modules/uview-pro-x/components` 下的**库组件**；`components/demo-*` 等演示容器组件不适用。
+- **参考库字眼隔离**：`uni_modules/uview-pro-x-uts` 的代码与注释**不出现参考库名称**（含其组件名前缀、CSS 变量名，也不用改写的占位词），注释写成自洽的规则描述；`.agents/` 技能文档可且应保留真实名称。
+- 命名规范仅约束 `uni_modules/uview-pro-x-uts/components` 下的**库组件**；`components/demo-*` 等演示容器组件不适用。
 - 平台约束（UCSS 选择器/单位/动画等）与 UTS 语法细则**不在此重复**，见对应 skill 的 `references/`。

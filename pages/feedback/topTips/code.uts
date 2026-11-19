@@ -100,7 +100,7 @@ const nav = `
 </template>
 
 <script setup lang="uts">
-import { useWindowInfo, useDeviceInfo } from '@/uni_modules/uview-pro-x';
+import { useWindowInfo, useDeviceInfo } from '@/uni_modules/uview-pro-x-uts';
 
 const { statusBarHeight } = useWindowInfo();
 const { platform } = useDeviceInfo();

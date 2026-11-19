@@ -190,7 +190,7 @@
 </template>
 
 <script setup lang="uts">
-    import { $u, useLocale } from '@/uni_modules/uview-pro-x';
+    import { $u, useLocale } from '@/uni_modules/uview-pro-x-uts';
     import { codes } from './code';
 
     const { t } = useLocale('demo');

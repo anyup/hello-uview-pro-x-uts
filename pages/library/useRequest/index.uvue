@@ -30,8 +30,8 @@
 </template>
 
 <script setup lang="uts">
-    import { http, useLocale, useRequest } from '@/uni_modules/uview-pro-x';
-    import type { HttpCallConfig, HttpError, HttpResponse } from '@/uni_modules/uview-pro-x';
+    import { http, useLocale, useRequest } from '@/uni_modules/uview-pro-x-uts';
+    import type { HttpCallConfig, HttpError, HttpResponse } from '@/uni_modules/uview-pro-x-uts';
     import { sinceOf } from '@/version';
     import { codes } from './code';
 

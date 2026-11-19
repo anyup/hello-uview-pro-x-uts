@@ -175,7 +175,7 @@
 </template>
 
 <script setup lang="uts">
-    import { $u, useLocale, useTheme, type DarkMode, type SubsectionListItem, type Theme } from '@/uni_modules/uview-pro-x';
+    import { $u, useLocale, useTheme, type DarkMode, type SubsectionListItem, type Theme } from '@/uni_modules/uview-pro-x-uts';
     import themePresets from '@/theme.uts';
     import { codes } from './code';
 
