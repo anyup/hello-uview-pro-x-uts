@@ -34,7 +34,9 @@ node_modules
 
 .agents/
 .trae/
-sync-split.mjs
-sync-split.config.json
 uview-pro-x-uts-doc/
 harmony-configs/
+AGENTS.md
+CLAUDE.md
+sync-split.mjs
+sync-split.config.json
