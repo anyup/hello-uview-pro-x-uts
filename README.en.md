@@ -1,35 +1,95 @@
-# uView Pro X
+# uView Pro X · UTS Edition — uni-app x Vapor-mode UI Component Library
 
-> **The uni-app x edition of uView Pro** — a cross-platform UI component library built on uni-app x. 76 high-quality components with a complete theme / i18n / utility / Hooks system; one codebase running on App (Android / iOS / HarmonyOS), H5 and WeMini Program.
+[English](README.en.md) · [简体中文](README.md)
 
-| App-Android | App-iOS | App-HarmonyOS | H5 | WeMini Program |
-| :---------: | :-----: | :-----------: | :-: | :------------: |
-|      ✅      |    ✅    |      ✅        | ✅  |       ✅        |
+> A cross-platform UI component library built on UTS + UVUE for uni-app x: 80+ high-quality components with a complete theme / i18n / utility / Hooks system; one codebase running on App (Android / iOS / HarmonyOS), H5, WeChat and Alipay Mini Programs.
 
----
+| App-Android | App-iOS | App-HarmonyOS | H5 | WeChat Mini Program | Alipay Mini Program |
+| :---------: | :-----: | :-----------: | :-: | :------------: | :------------: |
+|      ✅      |    ✅    |      ✅        | ✅  |       ✅        |       ✅        |
+
+## Product Matrix
+
+The uView Pro family spans the uni-app and uni-app x ecosystems — pick by your project's stack (this repository is uView Pro X, UTS edition):
+
+| Product | Positioning | Stack | License | Links |
+| ---- | ---- | ---- | ---- | ---- |
+| **uView Pro** | Cross-platform UI framework: 80+ high-quality components, rich utilities, ready-made templates; multi-theme / dark mode / i18n built in, one-click adaptation to H5 / App / HarmonyOS / mini programs | uni-app · Vue3 + TS | Open source | [Site](https://uviewpro.cn/) · [Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro) |
+| **uView Pro Starter** | Quick-start template built on uView Pro; one codebase fully compatible with H5 / mini programs / Android / iOS / HarmonyOS | uni-app · Vue3 + TS | Open source | [Site](https://starter.uviewpro.cn/) · [GitHub](https://github.com/anyup/uView-Pro-Starter) |
+| **uView Pro X · UTS edition** | uni-app x component library 1.x: strongly-typed UTS, compiles to native Kotlin / Swift on App, multi-theme / dark mode / i18n / request layer built in, requires HBuilderX 5.03+ | uni-app x · UTS + UVUE | Paid | [Site](https://uts.uviewpro.cn/) · [Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro-x-uts) |
+| **uView Pro X · TS edition** | uni-app x component library 2.0: API identical to the UTS edition, fully strongly-typed TS, requires HBuilderX 5.31+ | uni-app x · TS + UVUE | Paid | [Site](https://x.uviewpro.cn/) · [Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro-x) |
+
+## Related Documentation
+
+| Document | Description |
+| ---- | ---- |
+| [uView Pro X · Official docs](https://uts.uviewpro.cn) | Full documentation of this library: component API, theming, i18n and more |
+| [uView Pro X · Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro-x-uts) | Download, online trial and release notes |
+| [uView Pro · Official docs](https://uviewpro.cn) | Original uView Pro documentation, useful as a cross reference |
+| [uni-app x · Official docs](https://doc.dcloud.net.cn/uni-app-x/) | Platform capabilities, vapor mode and UTS language reference |
+
+## Demos & Playground
+
+<table class="table">
+    <tr>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/download/h5uts.png" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/download/wechatx.jpg" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/download/alipayx.png" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/download/androidx.png" width="200" ></td>
+    </tr>
+    <tr>
+        <td align="center"><strong>H5</strong><br>(scan in a browser)</td>
+        <td align="center"><strong>WeChat Mini Program</strong><br>(scan in WeChat)</td>
+        <td align="center"><strong>Alipay Mini Program</strong><br>(scan in Alipay)</td>
+        <td align="center"><strong>App (Android)</strong><br>(scan in a browser)</td>
+    </tr>
+</table>
+
+<img src="https://ik.imagekit.io/anyup/uview-pro/x/preview5.png"/>
+
+## AI-Assisted Development
+
+uView Pro X ships a companion Agent Skills package. Once installed, AI coding clients that support skills (Qoder, Claude Code, Cursor, etc.) know this library's page authoring conventions, UTS / UVUE constraints, i18n & theming recipes and cross-platform pitfalls:
+
+```bash
+pnpx skills add uview-pro/skills
+```
+
+Run the command and pick the `uview-pro-x-uts` skill (for TypeScript projects pick `uview-pro-x`). If the installation fails, download it from the open-source repository: [https://github.com/uview-pro/skills](https://github.com/uview-pro/skills).
+
+After installation, just describe what you need to the AI assistant (for example "build a login page with theme switching using uview-pro-x-uts") — it generates compilable pages following the skill's conventions and validates `ux-*` component prop usage.
+
+## Feedback
+
+<table class="table">
+    <tr>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/qquts.png" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/caoliaouts.png" width="200" ></td>
+    </tr>
+</table>
+
+If you purchased the source version, please mention your purchasing account name when adding me — I will verify the receipt and invite you into the source code group.
+
+<table class="table">
+    <tr>
+        <td><img src="https://ik.imagekit.io/anyup/images/social/weixin-personal.png" width="200" ></td>
+    </tr>
+</table>
 
 ## Highlights
 
 | Feature | Description |
 | ---- | ---- |
-| **76 components** | Covering basic / form / data / feedback / layout / navigation / other categories — common mobile scenarios work out of the box |
+| **80+ components** | Covering basic / form / data / feedback / layout / navigation / other categories — common mobile scenarios work out of the box |
 | **Vapor mode first** | Developed for uni-app x vapor mode: bytecode rendering on App, composition API and plain class selectors only, prioritizing performance and cross-platform consistency |
 | **Style isolation 2.0** | Built on the `styleIsolation` strategy 2.0 — component styles and business styles never pollute each other |
-| **Multi-language development (UTS / TS / JS)** | Components and pages are written in strongly typed UTS with complete type definitions, while TypeScript / JavaScript styles remain usable; type errors surface at compile time instead of runtime |
-| **API largely consistent with uView Pro** | The vast majority of props / events / slots keep the original naming and behaviour, so existing experience transfers directly; a few items are adjusted for uni-app x platform capabilities — see the [official docs](https://x.uviewpro.cn) for the full list |
+| **Strongly typed UTS** | Components and pages are written in UTS with complete type definitions on props / events / slots; type errors surface at compile time instead of runtime |
 | **Themes and dark mode** | Official blue theme built in, custom themes supported, light / dark / system-following switching with persistence, native App background stays in sync |
 | **Internationalization** | Chinese / English / French language packs built in, custom packs can be merged and extended, switched at runtime with persistence |
 | **$u global utility object** | 20+ helpers: regex validation `test`, unit conversion `addUnit`, debounce / throttle, deep clone / merge, color processing, date formatting, etc. |
-| **16 built-in Hooks** | `useTheme`, `useLocale`, `useCountDown`, `useDebounce` / `useThrottle`, `usePopup`, and more |
+| **19 built-in Hooks** | `useTheme`, `useLocale`, `useCountDown`, `useDebounce` / `useThrottle`, `usePopup`, and more |
+| **Built-in request layer** | `http` axios-style instance model (chained interceptors / derived instances / upload & download progress) + `useRequest` page-level tri-state, zero third-party dependencies |
 | **easycom out of the box** | `ux-` prefixed components are auto-registered — no manual import or local registration |
-
-## Why uView Pro X
-
-1. **Native performance + type safety**: written in UTS on uni-app x, rendered natively on App (not a WebView shell), with compile-time type checking.
-2. **Low migration cost**: the API is largely consistent with uView Pro — in most cases swapping `u-xxx` for `ux-xxx` in the tag is enough; check the [official docs](https://x.uviewpro.cn) for the details.
-3. **Consistent across three ends**: the same code runs on App (Android / iOS / HarmonyOS), H5 and WeMini Program; platform differences are already handled inside components via conditional compilation.
-4. **A complete system**: more than components — theming, dark mode, i18n, utilities and Hooks are all provided, so no third-party solutions need to be assembled.
-5. **Trustworthy engineering**: every component carries complete comments and a matching demo page, so behaviour is documented and reproducible.
 
 ## Component Overview
 
@@ -45,15 +105,17 @@
 | Navigation |  9   | `tabbar`, `back-top`, `navbar`, `tabs`, `subsection`, `steps`, `step`, `link`, `pagination` |
 | Other |  4   | `safe-bottom`, `status-bar`, `transition`, `config-provider` |
 
+<img src="https://ik.imagekit.io/anyup/uview-pro/x/preview4.png"/>
+
 ## Installation
 
-Requirement: an HBuilderX version that supports uni-app x (or any environment able to compile a uni-app x project).
+Requirement: **HBuilderX 5.03+** (a uni-app x project compiled with the UTS language strategy). This plugin only serves UTS projects; for TypeScript projects install the other plugin [uView Pro X · TS edition](https://ext.dcloud.net.cn/plugin?name=uview-pro-x) — it is not a historical version of the same plugin but a separately published package, and components will not compile if you install the wrong one.
 
-The library is distributed through the **DCloud Plugin Market**: open https://ext.dcloud.net.cn/plugin?name=uview-pro-x and click "Download plugin and import into HBuilderX"; you can also search for `uview-pro-x` in the HBuilderX plugin market panel.
+Open this plugin in the [DCloud Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro-x-uts) and click "Download plugin and import into HBuilderX"; you can also search for `uview-pro-x-uts` in the HBuilderX plugin market panel.
 
-After import, the library lands in your project's `uni_modules/uview-pro-x/` directory and the easycom rules ship with the package.
+After import, the library lands in your project's `uni_modules/uview-pro-x-uts/` directory and the easycom rules ship with the package.
 
-## Configuration & Usage
+## Quick Start
 
 ### 1. Configure easycom (pages.json)
 
@@ -62,7 +124,7 @@ After import, the library lands in your project's `uni_modules/uview-pro-x/` dir
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^ux-(.*)": "@/uni_modules/uview-pro-x/components/ux-$1/ux-$1.uvue"
+      "^ux-(.*)": "@/uni_modules/uview-pro-x-uts/components/ux-$1/ux-$1.uvue"
     }
   }
 }
@@ -77,7 +139,7 @@ Registering the plugin unlocks i18n, theming and more; every option is optional 
 ```ts
 import App from './App.uvue'
 // Named import is required: the encrypted build's entry does not forward the default export
-import { uViewProX, zhCN, enUS } from '@/uni_modules/uview-pro-x'
+import { uViewProX, zhCN, enUS } from '@/uni_modules/uview-pro-x-uts'
 import { createSSRApp } from 'vue'
 
 export function createApp() {
@@ -95,30 +157,37 @@ export function createApp() {
 
 ### 3. Import theme styles (uni.scss)
 
-The encrypted build cannot `@import` the library's `theme.scss`; copy the `$u-*` variable block from `theme.scss` into your `uni.scss`. With the source version you can use `@import '@/uni_modules/uview-pro-x/theme.scss';` directly. See [Quick Start](https://x.uviewpro.cn/en/guide/quickstart) for the full block.
+**Source version**: import the library's theme file directly in your `uni.scss`.
+
+```scss
+@import '@/uni_modules/uview-pro-x-uts/theme.scss';
+```
+
+**Standard license (encrypted)**: `@import` cannot reach inside the plugin package — copy the `$u-*` variable block from `theme.scss` to the end of your `uni.scss`. See [Quick Start](https://uts.uviewpro.cn/en/guide/quickstart) for the full block.
 
 ### 4. Start building
 
 ```vue
 <template>
   <view class="page">
-    <ux-input v-model="keyword" placeholder="Please enter a keyword" border />
+    <ux-input v-model="siteUrl" placeholder="Please enter a URL" border />
     <ux-button type="primary" text="Submit" @click="onSubmit" />
     <ux-tag text="New" type="error" />
   </view>
 </template>
 
 <script setup lang="uts">
-  import { $u } from '@/uni_modules/uview-pro-x'
+  import { $u } from '@/uni_modules/uview-pro-x-uts'
 
-  const keyword = ref('')
+  const siteUrl = ref('')
 
   const onSubmit = () => {
-    if (!$u.test.mobile('13800138000')) {
-      uni.showToast({ title: 'Please enter a valid phone number', icon: 'none' })
+    // Validate that the input is a legal http(s) URL
+    if (!$u.test.url(siteUrl.value)) {
+      uni.showToast({ title: 'Please enter a valid URL', icon: 'none' })
       return
     }
-    console.log('Submitted: ' + keyword.value)
+    console.log('Submitted: ' + siteUrl.value)
   }
 </script>
 ```
@@ -128,12 +197,12 @@ The encrypted build cannot `@import` the library's `theme.scss`; copy the `$u-*`
 ### $u global utility object
 
 ```ts
-import { $u } from '@/uni_modules/uview-pro-x'
+import { $u } from '@/uni_modules/uview-pro-x-uts'
 ```
 
 | Capability | Description |
 | ---- | ---- |
-| `$u.test.mobile('138…')` | 20+ regex validations: phone, email, ID card, URL, etc. |
+| `$u.test.url('https://uviewpro.cn')` | 20+ regex and type validations: URL, email, number, ranges, etc. |
 | `$u.addUnit(20)` | Convert a number into a unit-suffixed string (px by default) |
 | `$u.toStyle(obj)` | Convert a style object into a style string |
 | `$u.debounce` / `$u.throttle` | Debounce / throttle wrappers |
@@ -144,7 +213,7 @@ import { $u } from '@/uni_modules/uview-pro-x'
 ### Built-in Hooks
 
 ```ts
-import { useTheme, useLocale, useCountDown } from '@/uni_modules/uview-pro-x'
+import { useTheme, useLocale, useCountDown } from '@/uni_modules/uview-pro-x-uts'
 ```
 
 | Hook | Purpose |
@@ -159,13 +228,34 @@ import { useTheme, useLocale, useCountDown } from '@/uni_modules/uview-pro-x'
 | `useTouch` | Touch gestures (distance / direction) |
 | `useSafeArea` | Bottom safe-area height |
 | `useWindowInfo` | Screen / window information |
+| `useDeviceInfo` | Device information (platform / model / OS, etc.) |
+| `usePageScroll` | Page scroll offset; the page's onPageScroll and scroll-view share a single channel |
+| `useRequest` | Request tri-state (loading / data / error), rerun cancels the previous, auto-cancel on unmount |
 
 > `useBEM`, `useStyle`, `useParent`, `useChildren` and `useConfig` are internal component utilities, useful when extending the library itself.
+
+### HTTP requests
+
+```ts
+import { http, useRequest } from '@/uni_modules/uview-pro-x-uts'
+
+// axios-style instance model: http.create derives independent instances, chained interceptors, upload / download with progress
+const api = http.create({ baseURL: 'https://example.com' })
+api.get('/api/user').then((res) => {
+  console.log(res.data)
+})
+
+// Page-level tri-state: a repeated run() cancels the previous request, auto-cancel on unmount
+const user = useRequest((ctx) => api.get('/api/user', null, { signal: ctx.signal }))
+// user.loading / user.data / user.error / user.run() / user.cancel()
+```
+
+Failures always reject with `HttpError`; `isCancel(e)` distinguishes cancellation from real errors. Full capabilities: [http](https://uts.uviewpro.cn/en/request/http) and [useRequest](https://uts.uviewpro.cn/en/request/use-request).
 
 ### Themes and dark mode
 
 ```ts
-import { useTheme } from '@/uni_modules/uview-pro-x'
+import { useTheme } from '@/uni_modules/uview-pro-x-uts'
 
 const { setTheme, setDarkMode, toggleDarkMode, isInDarkMode } = useTheme()
 
@@ -188,10 +278,14 @@ app.use(uViewProX, {
 })
 ```
 
+<img src="https://ik.imagekit.io/anyup/uview-pro/x/preview1.png"/>
+
+<img src="https://ik.imagekit.io/anyup/uview-pro/x/preview2.png"/>
+
 ### Internationalization
 
 ```ts
-import { useLocale } from '@/uni_modules/uview-pro-x'
+import { useLocale } from '@/uni_modules/uview-pro-x-uts'
 
 const { t, setLocale, currentLocale } = useLocale()
 
@@ -210,50 +304,4 @@ app.use(uViewProX, {
 })
 ```
 
-## Demos & Playground
-
-- **Try online**: open the [plugin market page](https://ext.dcloud.net.cn/plugin?name=uview-pro-x) and click "Try" to browse every component demo online, no download needed.
-- **Run locally**: clone the demo project [hello-uview-pro-x](https://github.com/anyup/hello-uview-pro-x), open it in HBuilderX, then:
-  - Run → **Run in browser** (H5)
-  - Run → **Run on phone or emulator** (App / HarmonyOS)
-  - Run → **Run in mini program simulator** (WeMini Program)
-
-## AI-Assisted Development
-
-uView Pro X ships a companion Agent Skills package. Once installed, AI coding clients that support skills (Qoder, Claude Code, Cursor, etc.) know this library's page authoring conventions, UTS / UCSS constraints, i18n & theming recipes and cross-platform pitfalls:
-
-```bash
-pnpx skills add uview-pro/skills
-```
-
-After installation, just describe what you need to the AI assistant (for example "build a login page with theme switching using uview-pro-x") — it generates compilable pages following the skill's conventions and validates `ux-*` component prop usage.
-
-## Package Layout
-
-```
-uni_modules/uview-pro-x/
-├── components/                 # ux-* components (easycom auto registration)
-├── libs/
-│   ├── config/                 # library config constants, theme tokens, zIndex
-│   ├── hooks/                  # 16 composable hooks
-│   ├── styles/                 # global styles and mixins (hairline borders, etc.)
-│   └── utils/                  # utility functions (the $u implementation)
-├── locale/                     # language packs (zh-CN / en-US / fr-FR)
-├── types/                      # global type definitions
-├── index.scss                  # style entry
-├── theme.scss                  # SCSS theme variables (overridable)
-└── index.uts                   # plugin entry ($u / hooks exports)
-```
-
-## Related Documentation
-
-| Document | Description |
-| ---- | ---- |
-| [uView Pro X official docs](https://x.uviewpro.cn) | Full documentation of this library: component API, theming, i18n and more |
-| [DCloud Plugin Market](https://ext.dcloud.net.cn/plugin?name=uview-pro-x) | Download, online trial and release notes |
-| [uView Pro official docs](https://uviewpro.cn) | Original documentation (this library is largely consistent with it, useful as a cross reference) |
-| [uni-app x official docs](https://doc.dcloud.net.cn/uni-app-x/) | Platform capabilities, vapor mode and UTS language reference |
-
----
-
-[简体中文](README.md)
+<img src="https://ik.imagekit.io/anyup/uview-pro/x/preview3.png"/>
