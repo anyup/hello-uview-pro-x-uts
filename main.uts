@@ -22,6 +22,7 @@ export function createApp() {
 		locale: {
 			locales: [zhCN, enUS],
 			defaultLocale: 'zh-CN',
+			defaultTheme: 'purple',
 			isForce: false
 		},
 		// 多主题：列表即注册列表，含显式声明的内置基线主题项（共 5 套）
