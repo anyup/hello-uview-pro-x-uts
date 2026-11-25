@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.8（2026-11-25）
+
+### ✨ Features | 新功能
+
+- 新增窗口信息刷新方法并导出到返回对象
+- 新增 ux-popover 气泡菜单组件
+- 新增气泡菜单组件 Popover 页面演示及配置
+
 ## 1.1.7（2026-11-25）
 
 ### 🐛 Bug Fixes | Bug 修复
