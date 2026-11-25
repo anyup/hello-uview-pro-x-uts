@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.7（2026-11-25）
+
+### 🐛 Bug Fixes | Bug 修复
+
+- **ux-tabs:** 优化 ux-tabs 组件的跨端适配，修复 App 端文字字号不继承父元素的问题
+
+### ♻️ Code Refactoring | 代码重构
+
+- **tabs:** 新增字号和激活项样式示例代码及演示页面
+
 ## 1.1.6（2026-11-24）
 
 ### 🐛 Bug Fixes | Bug 修复
