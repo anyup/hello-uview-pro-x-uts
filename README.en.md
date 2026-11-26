@@ -63,8 +63,8 @@ After installation, just describe what you need to the AI assistant (for example
 
 <table class="table">
     <tr>
-        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/qquts.png" width="200" ></td>
-        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/caoliaouts.png" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/qqx.png" width="200" ></td>
+        <td><img src="https://ik.imagekit.io/anyup/uview-pro/group/caoliaox.png" width="200" ></td>
     </tr>
 </table>
 
