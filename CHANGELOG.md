@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.12（2026-11-27）
+
+### ✨ Features | 新功能
+
+- **ux-count-down:** 新增 format 属性支持自定义倒计时文本格式，如 HH:mm:ss、DD HH:mm:ss 等，新增默认插槽支持自定义模板模式外层结构
+- **countDown:** 新增 format 格式模板、slot 自定义插槽等示例，优化手动控制功能
+
 ## 1.1.11（2026-11-26）
 
 ### ✨ Features | 新功能
