@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.13（2026-11-28）
+
+### ✨ Features | 新功能
+
+- **ux-signature:** 新增手写签名板组件，支持笔迹书写、撤销、清空与图片导出功能，包含类型定义文件和完整组件实现。
+- 新增触摸模拟器，用于桌面端模拟触摸事件
+- **signature:** 新增签名组件的演示页面，包含基础用法、自定义画笔、提示语、按钮配置、实例方法、背景与导出格式、自定义尺寸、禁用书写等多个场景
+- **signature-grid:** 新增签名网格组件的演示页面，支持米字格、田字格、九宫格底纹类型、格子大小、网格与描红颜色、描红内容、格线对齐、导出与撤销、导出笔迹等场景
+
 ## 1.1.12（2026-11-27）
 
 ### ✨ Features | 新功能
